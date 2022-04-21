@@ -2,8 +2,8 @@
 
 The Dockerfile encapsulates the main part of the server. It assumes access to the environment
 variables ``PORT` (port on which the server will run), ``SERVICE_ACCOUNT_INFO`` (JSON string of the
-service account key for accessing the Google Sheet), ``SPREADSHEET_ID`` (ID of the Google Sheet)
-and ``SPREADSHEET_RANGE`` (range of the relevant data in the Google Sheet).
+Google Cloud service account key for accessing the Google Sheet), ``SPREADSHEET_ID`` (ID of the
+Google Sheet) and ``SPREADSHEET_RANGE`` (range of the relevant data in the Google Sheet).
 
 ## Local development
 
