@@ -1,3 +1,6 @@
+__pycache__
 env
 snp
 vcf
+account_key.json
+env_secret.dev

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<meta charset="UTF-8">
+<html>
+  <head>
+      <title>Doggle</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1"/>
+      <style>
+        img.emoji {
+            height: 1em;
+            width: 1em;
+            margin: 0 .05em 0 .1em;
+            vertical-align: -0.1em;
+        }
+        img.drawing {
+            display: block;
+            margin: auto;
+        }
+        body {
+            max-width: 500px;
+            margin: auto;
+            padding: 5px;
+        }
+        h1 {
+            text-align: center
+        }
+        div.input {
+            padding: 5px;
+        }
+        input {
+            box-sizing: border-box;
+        }
+        td {
+            text-align: center;
+        }
+        tr.success {
+            background-color: #00ee00;
+        }
+        input, button, table {
+            width: 100%;
+        }
+        button {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        div.card {
+            text-align: center;
+            border-style: solid;
+            border-width: thin;
+            border-radius: 2px;
+        }
+        footer {
+            margin-top: 20px;
+        }
+      </style>
+      <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+      <script type="text/javascript">
+          var CHOICES = {{choices|tojson|safe}};
+      </script>
+      <script type="text/javascript" src="/static/js/home.js"></script>
+  </head>
+  <body>
+      <div>
+          <h1>
+              D<img src="{{ url_for('static', filename='pawprint.png') }}"/>ggle
+          </h1>
+      </div>
+      <div class="input">
+          <form id="guess_form">
+            <datalist id="choices">
+                {% for choice in choices %}
+                <option value="{{choice}}">
+                {% endfor %}
+            </datalist>
+            <input list="choices" id="guess" placeholder="Enter your guess..."/>
+          <button form="guess_form">Guess <span>&#128021;</span></button>
+          </form>
+      </div>
+      <div>
+          <table id="result">
+              <tr>
+                  <th>#</th>
+                  <th>Guess</th>
+                  <th>Similarity</th>
+                  <th>Getting close?</th>
+              </tr>
+          </table>
+      </div>
+  </body>
+  <footer>
+      <a href="https://www.flaticon.com/free-icons/dog" title="dog icons">Dog icons created by Freepik - Flaticon</a>
+  </footer>
+</html>
+{% endautoescape %}
