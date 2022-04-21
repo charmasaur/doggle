@@ -1,0 +1,3 @@
+https://www.sciencedirect.com/science/article/pii/S2211124717304564?via%3Dihub
+
+Seems as though it gets the matrix from using Beagle, which I think needs the VCFs.
