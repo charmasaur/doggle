@@ -23,9 +23,6 @@ window.onload = function() {
       var cell;
 
       cell = row.insertCell(-1);
-      cell.innerHTML = previous_guesses.length;
-
-      cell = row.insertCell(-1);
       cell.innerHTML = guess;
 
       cell = row.insertCell(-1);
